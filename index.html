@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Luva 整合行銷團隊｜活動企劃・視覺設計・網站製作・攝影</title>
+<meta name="description" content="Luva 整合行銷團隊：從活動企劃、視覺設計、網站製作到攝影影音，一站式完成。">
+<link rel="preconnect" href="https://font.emtech.cc" crossorigin>
+<link href="https://font.emtech.cc/css/UoqMunThenKhung" rel="stylesheet">
+<link href="https://font.emtech.cc/css/ChenYuLuoYan" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" crossorigin="anonymous" defer></script>
+<style>
+:root{
+  --g:#7BA643;--gl:#A0C661;--gd:#2A6242;--gb:#377D47;--gt:#DEEDC2;--ac:#F28B6D;
+  --bg:#f7f4e7;--tx:#24332A;--soft:#5E6B62;--card:#fff;--head:#2A6242;
+  --s1:#DEEDC2;--s2:#FFE1E1;--s3:#DCECFB;--s4:#FCEBD9;--s5:#F3E4FB;--s6:#D6F5E5;--i1:#5E8F2F;--i2:#D9667A;--i3:#3F7FC1;--i4:#E58A2B;--i5:#9A5FC4;--i6:#2E9C77;
+  --f-title:"UoqMunThenKhung","Noto Serif TC",serif;
+  --f-hand:"ChenYuLuoYan","Noto Serif TC",cursive;
+  --f-body:"Noto Sans TC",system-ui,sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#121A15;--tx:#E9F1E3;--soft:#A9B8AC;--card:#1B2620;--head:#CFE8B0;--gt:#22301F;
+  --s1:#2B3A24;--s2:#43292B;--s3:#22344A;--s4:#47341F;--s5:#392947;--s6:#1F4032;--i1:#A0C661;--i2:#F08CA0;--i3:#7FB5E8;--i4:#F5B56B;--i5:#C7A2E8;--i6:#6FD1AA}}
+:root[data-theme="dark"]{
+  --bg:#121A15;--tx:#E9F1E3;--soft:#A9B8AC;--card:#1B2620;--head:#CFE8B0;--gt:#22301F;
+  --s1:#2B3A24;--s2:#43292B;--s3:#22344A;--s4:#47341F;--s5:#392947;--s6:#1F4032;--i1:#A0C661;--i2:#F08CA0;--i3:#7FB5E8;--i4:#F5B56B;--i5:#C7A2E8;--i6:#6FD1AA}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--bg);color:var(--tx);font:400 16px/1.75 var(--f-body);overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+main{overflow-x:clip}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--f-title);color:var(--head);line-height:1.25;margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.cl{width:1em;height:1em;color:var(--g);display:inline-block;vertical-align:-.12em}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--gb);color:#fff;padding:12px 26px;border-radius:99px;font-weight:500;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-2px) rotate(-1deg);background:var(--gd)}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--ac);outline-offset:3px}
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font:700 22px var(--f-title);color:var(--head)}
+.logo-img{display:block;height:44px;width:auto;max-width:62vw}
+@media(max-width:899px){.logo-img{height:36px}}
+nav{display:none;gap:26px;font-size:15px}nav a{padding:6px 2px;border-bottom:2px solid transparent}nav a:hover{border-color:var(--ac)}
+@media(min-width:900px){nav{display:flex}}
+.hr{display:flex;align-items:center;gap:10px}
+.mb{display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;width:42px;height:42px;border:0;border-radius:50%;background:var(--gt);cursor:pointer}
+.mb i{display:block;width:18px;height:2px;border-radius:2px;background:var(--head);transition:transform .25s,opacity .2s}
+.mb[aria-expanded=true] i:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.mb[aria-expanded=true] i:nth-child(2){opacity:0}
+.mb[aria-expanded=true] i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mb:focus-visible{outline:3px solid var(--ac);outline-offset:3px}
+@media(min-width:900px){.mb{display:none}}
+@media(max-width:899px){
+  nav{display:flex;flex-direction:column;gap:0;position:absolute;left:12px;right:12px;top:calc(100% + 6px);background:var(--bg);border-radius:24px;padding:8px 20px;box-shadow:0 16px 36px rgba(20,40,25,.22);opacity:0;visibility:hidden;transform:translateY(-10px) scale(.98);transition:opacity .25s,transform .25s,visibility .25s}
+  nav.open{opacity:1;visibility:visible;transform:none}
+  nav a{padding:14px 4px;font-size:17px;border-bottom:1px solid var(--gt)}
+  nav a:last-child{border-bottom:0}
+  .logo{font-size:18px}.logo .cl{font-size:28px}.logo small{display:none}
+  .hr .btn{display:none}}
+/* hero */
+.hero{position:relative;padding:40px 0 70px}
+.hero .wrap{display:grid;gap:36px;align-items:center}
+@media(min-width:900px){.hero .wrap{grid-template-columns:1fr 1.15fr}.hero{padding:70px 0 100px}}
+.hero h1{font-size:clamp(34px,6vw,60px);letter-spacing:.02em}
+.hero .sub{margin:18px 0 6px;color:var(--soft)}
+.rot{display:inline-block;min-width:4.5em;color:var(--ac);font-family:var(--f-body);font-size:1.5em;line-height:1;transition:opacity .3s,transform .3s}
+.rot.out{opacity:0;transform:translateY(8px) rotate(-3deg)}
+.hand{font:400 24px var(--f-hand);color:var(--gb);transform:rotate(-3deg);display:inline-block;margin:10px 0 24px}
+.collage{position:relative;height:400px}
+@media(min-width:900px){.collage{height:540px}}
+.hs{position:absolute;left:50%;top:50%;width:min(90%,650px);aspect-ratio:.9;transform:translate(-50%,-50%)}
+.hs-bg,.hs-img{position:absolute;inset:0;clip-path:url(#heroshape)}
+.hs-bg{background:radial-gradient(circle at 30% 25%,color-mix(in srgb,var(--gl) 55%,transparent),color-mix(in srgb,var(--g) 38%,transparent));transform:translate(7%,6%) rotate(5deg);animation:sway 10s ease-in-out infinite}
+@keyframes sway{50%{transform:translate(9%,7%) rotate(9deg)}}
+.hs-main{position:absolute;inset:0;filter:drop-shadow(0 16px 22px rgba(20,40,25,.22));animation:grow .9s cubic-bezier(.3,1.3,.5,1) backwards,bob 8s 1s ease-in-out infinite}
+@keyframes grow{from{opacity:0;transform:scale(.85) rotate(-3deg)}}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.hs-img{background:linear-gradient(150deg,#8fb7e8,#c7a2e8 48%,#f5b9a3);display:grid;place-items:center;color:#fff;text-align:center;font:700 15px/1.5 var(--f-title);text-shadow:0 1px 6px rgba(0,0,0,.35)}
+.hs-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.bdg{position:absolute;z-index:3;left:2%;bottom:7%;width:min(26%,116px);aspect-ratio:1;border-radius:50%;background:var(--ac);display:grid;place-items:center;box-shadow:0 8px 18px rgba(20,40,25,.2)}
+.bdg .ring{position:absolute;inset:0;width:100%;height:100%;animation:spin 22s linear infinite}
+.bdg text{font:600 10.5px var(--f-body);fill:#14261b}
+.bdg .cl{position:relative;font-size:30px;color:#14261b}
+.fc{position:absolute;color:var(--gd);font-size:46px;animation:spin 18s linear infinite;z-index:2;opacity:.9}
+@keyframes spin{to{transform:rotate(360deg)}}
+.fc.a{left:5%;top:5%}.fc.b{right:30%;bottom:0;font-size:30px;color:var(--ac);animation-duration:26s}
+/* marquee */
+/* sections */
+section{padding:80px 0}
+.sh{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:34px}
+.sh h2{font-size:clamp(28px,4.5vw,40px)}.sh .hand{margin:0}
+/* services */
+.svc{display:grid;gap:18px;grid-template-columns:1fr 1fr}
+@media(min-width:900px){.svc{grid-template-columns:repeat(3,1fr);gap:26px}}
+.sv{border-radius:26px 26px 26px 6px;padding:24px 20px;background:var(--b);transition:transform .3s}
+.sv:nth-child(even){border-radius:26px 6px 26px 26px;margin-top:22px}
+.sv:nth-child(3n+1){--t:-1.2deg}.sv:nth-child(3n+2){--t:1.5deg}.sv:nth-child(3n){--t:-.6deg}
+@media(min-width:900px){.sv{transform:rotate(var(--t))}.sv:nth-child(even){margin-top:34px}}
+.sv:hover{transform:rotate(0) scale(1.03)}
+.sv .ic{display:grid;place-items:center;width:58px;height:58px;border-radius:50%;font-size:26px;background:color-mix(in srgb,var(--card) 72%,transparent);transition:transform .35s cubic-bezier(.3,1.8,.5,1)}
+.sv:hover .ic{transform:translateY(-8px) rotate(-10deg)}
+.sv h3{font-size:19px;margin:8px 0 6px}.sv p{margin:0;font-size:14px;color:var(--soft);line-height:1.7}
+/* works */
+.wall{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 20px 26px;margin:0 -20px;scrollbar-width:none}
+.wall::-webkit-scrollbar{display:none}
+.w{flex:0 0 78%;scroll-snap-align:center;position:relative;aspect-ratio:4/3;border-radius:22px;overflow:hidden;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:18px;background:var(--bgp);transition:transform .35s}
+.w::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 45%,rgba(0,0,0,.5))}
+.w>*{position:relative;z-index:1}
+.w>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.w.sk{background:var(--gt);animation:pulse 1.4s ease-in-out infinite}.w.sk::after{display:none}
+@keyframes pulse{50%{opacity:.55}}
+button.btn{border:0;font:inherit;font-weight:500;cursor:pointer}
+.empty{grid-column:1/-1;text-align:center;color:var(--soft);padding:30px 0}
+.w b{font:700 18px var(--f-title)}
+.tag{align-self:flex-start;background:var(--ac);color:#24332A;font-size:12px;padding:2px 12px;border-radius:99px;margin-bottom:6px;font-weight:500}
+@media(min-width:900px){
+  .wall{display:grid;grid-template-columns:repeat(6,1fr);gap:20px;overflow:visible;padding:0;margin:0}
+  .w{flex:none;aspect-ratio:auto;min-height:250px}
+  .w:nth-child(1){grid-column:span 4}.w:nth-child(2){grid-column:span 2}.w:nth-child(3){grid-column:span 2}
+  .w:nth-child(4){grid-column:span 4}.w:nth-child(5),.w:nth-child(6){grid-column:span 3}
+  .w:nth-child(odd){transform:rotate(-.8deg)}.w:nth-child(even){transform:rotate(1deg)}
+  .w:hover{transform:rotate(0) scale(1.03) perspective(600px) rotateX(2deg);z-index:2}}
+.more{margin-top:22px;text-align:center}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px}
+.chip{border:0;cursor:pointer;font:500 14px var(--f-body);padding:8px 18px;border-radius:99px;background:var(--gt);color:var(--head);transition:transform .2s,background .2s}
+.chip:hover{transform:translateY(-2px) rotate(-2deg)}
+.chip[aria-pressed=true]{background:var(--gb);color:#fff}
+.chip:focus-visible{outline:3px solid var(--ac);outline-offset:3px}
+.all{display:grid;gap:16px;grid-template-columns:1fr 1fr}
+@media(min-width:900px){.all{grid-template-columns:repeat(4,1fr);gap:20px}}
+.all .w{flex:none;aspect-ratio:4/3;min-height:0;grid-column:auto!important;padding:14px;transform:none;animation:up .45s backwards}
+.all .w b{font-size:15px}
+.all .w:hover{transform:translateY(-4px) rotate(-1deg)}
+@keyframes up{from{opacity:0;transform:translateY(16px) scale(.97)}}
+/* process */
+.steps{display:grid;gap:22px;position:relative;list-style:none;margin:0;padding:0 0 0 22px;border-left:3px dashed var(--g)}
+.st{position:relative}.st::before{content:"";position:absolute;left:-33px;top:6px;width:18px;height:18px;border-radius:50%;background:var(--ac);border:4px solid var(--bg)}
+.st b{font:700 19px var(--f-title);color:var(--head);display:block}.st span{font-size:14px;color:var(--soft)}
+@media(min-width:900px){
+  .steps{grid-template-columns:repeat(6,1fr);border:0;padding:0;gap:0}
+  .st{padding:0 10px;text-align:center}
+  .st:nth-of-type(even){margin-top:46px}
+  .st::before{left:50%;margin-left:-9px;top:-56px}.st:nth-of-type(even)::before{top:-42px}
+  .steps svg{display:block}}
+.steps svg{position:absolute;left:0;top:-62px;width:100%;height:90px;pointer-events:none}
+@media(max-width:899px){.steps svg{display:none}}
+.steps path{fill:none;stroke:var(--g);stroke-width:3;stroke-dasharray:8 8;vector-effect:non-scaling-stroke}
+@media(min-width:900px){.proc{padding-top:80px}.proc .sh{margin-bottom:100px}}
+/* about */
+.ab{display:grid;gap:30px;align-items:center}
+@media(min-width:900px){.ab{grid-template-columns:1fr 1fr}}
+.ph{aspect-ratio:5/4;border-radius:50% 12% 50% 12%/40% 12% 40% 12%;background:linear-gradient(135deg,#f6d6a8,#a9d18e);transform:rotate(2deg);box-shadow:0 14px 30px rgba(20,40,25,.2);
+    background-image: url('https://rainchord.s3.ap-east-2.amazonaws.com/inventory/1792253543499_team.jpg');
+    background-size: cover;       /* 確保圖片能填滿這個不規則形狀且不變形 */
+    background-position: center;  /* 讓圖片置中顯示 */
+    background-repeat: no-repeat;}
+.ab p{max-width:34em}
+/* cta */
+.cta{background:var(--g);color:#14261b;text-align:center;border-radius:60px 60px 0 0;padding:70px 20px 90px;margin-top:40px}
+.cta h2{color:#14261b;font-size:clamp(28px,5vw,44px)}
+.cta .btn{margin-top:26px;background:#14261b}.cta .btn:hover{background:#000}
+footer{background:var(--g);color:#14261b;text-align:center;font-size:13px;padding:0 20px 28px}
+/* floating line */
+.fl{position:fixed;right:18px;bottom:calc(88px + env(safe-area-inset-bottom,0px));z-index:25;width:58px;height:58px;display:grid;place-items:center;font-size:32px;background:#06C755;color:#fff;border-radius:50%;box-shadow:0 8px 20px rgba(0,0,0,.25);transition:opacity .3s,transform .3s}
+@supports (height:100svh){.fl{bottom:auto;top:calc(100svh - 82px - env(safe-area-inset-bottom,0px))}}
+@media(min-width:900px){.fl{top:auto;bottom:24px;right:24px}}
+.fl:hover{transform:scale(1.08) rotate(-8deg)}
+.fl.hide{opacity:0;transform:translateY(20px);pointer-events:none}
+/* reveal */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<path id="lf" d="M0 0C-13-3-17-20-7-23-2-24 0-19 0-15 0-19 2-24 7-23 17-20 13-3 0 0Z"/>
+<symbol id="cl" viewBox="-26 -26 52 52"><g fill="currentColor"><use href="#lf"/><use href="#lf" transform="rotate(90)"/><use href="#lf" transform="rotate(180)"/><use href="#lf" transform="rotate(270)"/></g></symbol>
+<clipPath id="hrt" clipPathUnits="objectBoundingBox">
+  <path transform="translate(.5 1) scale(.0022194) translate(-399.36 -644.06)"
+        d="M404.19581214326126 338.46156343867415C554.8951111701688 72.72726912188105 818.181843827911 433.5664481295893 395.8041956502948 644.0559549644597 -18.181843827911052 433.5664481295893 245.10488882983122 72.72726912188105 404.19581214326126 338.46156343867415Z"/>
+</clipPath>
+<clipPath id="blobclip" clipPathUnits="objectBoundingBox">
+  <path transform="translate(0 .065) scale(.00645) translate(70 70)"
+        d="M40.9,-65.7C54.4,-63.1,67.5,-54.8,74.4,-42.9C81.2,-31.1,81.8,-15.5,75.7,-3.5C69.6,8.5,56.7,16.9,48.2,25.9C39.7,35,35.5,44.6,28.2,51C20.8,57.4,10.4,60.6,0.3,60.1C-9.8,59.6,-19.7,55.4,-27,49C-34.4,42.6,-39.3,34,-44.7,25.5C-50.1,17,-55.9,8.5,-60.4,-2.6C-64.8,-13.6,-67.7,-27.2,-62.2,-35.5C-56.7,-43.8,-42.7,-46.7,-30.9,-50.3C-19.1,-53.9,-9.6,-58.1,2.1,-61.7C13.7,-65.3,27.5,-68.4,40.9,-65.7Z"/>
+</clipPath>
+<clipPath id="heroshape" clipPathUnits="objectBoundingBox"><path d="M.50 .02C.74 0 .96 .12 .97 .36 .98 .55 .92 .62 .93 .76 .94 .92 .76 1 .52 .98 .30 .96 .22 .99 .10 .88 0 .76 .03 .56 .05 .40 .07 .20 .26 .04 .50 .02Z"/></clipPath>
+</defs></svg>
+
+<header><div class="wrap">
+  <a class="logo" href="#top" aria-label="Luva 整合行銷團隊">
+    <!-- ▼ LOGO 預留位置：把你的 logo SVG 內容貼在這個 <svg> 裡，並把 viewBox 改成你的尺寸。高度由 CSS .logo-img 控制（桌機 44px、手機 36px）。也可以改成 <img class="logo-img" src="assets/logo.svg" alt="Luva 整合行銷團隊"> -->
+    <svg class="logo-img" viewBox="0 0 280 56" role="img" aria-label="Luva 整合行銷團隊">
+      <use href="#cl" x="0" y="2" width="52" height="52" style="color:var(--g)"/>
+      <text x="62" y="30" style="font:700 24px var(--f-title);fill:var(--head)">Luva 整合行銷團隊</text>
+      <text x="62" y="48" style="font:400 11px var(--f-body);fill:var(--soft);letter-spacing:.12em">EVENT · DESIGN · MARKETING</text>
+    </svg>
+  </a>
+  <nav id="nv" aria-label="主選單"><a href="#top">首頁</a><a href="#about">關於我們</a><a href="#services">服務項目</a><a href="#works">精選作品</a><a href="#process">合作流程</a><a href="#contact">聯絡我們</a></nav>
+  <div class="hr"><a class="btn" href="#contact" style="padding:8px 18px;font-size:14px">立即諮詢</a><button class="mb" id="mb" type="button" aria-label="開啟選單" aria-expanded="false" aria-controls="nv"><i></i><i></i><i></i></button></div>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+  <div>
+    <h1>讓每一個創意，<br>成為看得見的精彩成果</h1>
+    <p class="sub">Luva 整合行銷團隊，我們擅長<br><span class="rot" id="rot">活動企劃</span></p>
+    <span class="hand">用專業，讓活動更精彩！</span><br>
+    <a class="btn" href="#contact">立即聯繫我們</a>
+  </div>
+  <div class="collage" aria-hidden="true">
+    <svg class="cl fc a"><use href="#cl"/></svg><svg class="cl fc b"><use href="#cl"/></svg>
+    <div class="hs">
+      <div class="hs-bg"></div>
+      <div class="hs-main"><div class="hs-img">
+        <img src="https://rainchord.s3.ap-east-2.amazonaws.com/inventory/1792235134405_luva-index%20-1.webp" alt="活動現場" width="860" height="956" fetchpriority="high">
+        
+      </div></div>
+    </div>
+    <div class="bdg">
+      <svg class="ring" viewBox="0 0 120 120"><defs><path id="circ" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"/></defs><text><textPath href="#circ" textLength="272" lengthAdjust="spacing">CREATIVE · DESIGN · MARKETING · EVENT ·</textPath></text></svg>
+      <svg class="cl"><use href="#cl"/></svg>
+    </div>
+  </div>
+</div></div>
+
+
+<section id="services"><div class="wrap">
+  <div class="sh rv"><h2>服務項目</h2><span class="hand">從企劃到現場，一次到位</span></div>
+  <div class="svc" id="svc"></div>
+</div></section>
+
+<section id="works" style="padding-top:20px"><div class="wrap">
+  <div class="sh rv"><h2>精選作品</h2><span class="hand">從企劃到現場執行，留下最美的回憶</span></div>
+  <div class="wall rv" id="wall"></div>
+  <div class="more"><a class="btn" href="#all" id="moreBtn" role="button">更多作品</a></div>
+</div></section>
+
+<section id="all" hidden style="padding-top:0"><div class="wrap">
+  <div class="sh"><h2>全部作品</h2><span class="hand">依類型挑選看看</span></div>
+  <div class="chips" id="chips"></div>
+  <div class="all" id="all-grid"></div>
+  <div class="more" id="moreWrap" hidden><button class="btn" id="loadMore" type="button">載入更多</button></div>
+</div></section>
+
+<section id="process" class="proc"><div class="wrap">
+  <div class="sh rv"><h2>合作流程</h2><span class="hand">簡單、透明、好溝通</span></div>
+  <ol class="steps rv" id="steps">
+    <svg viewBox="0 0 1000 90" preserveAspectRatio="none"><path d="M0 45 C40 45 40 15 83 15 S200 75 250 75 S370 15 417 15 S533 75 583 75 S700 15 750 15 S867 75 917 75 S970 45 1000 45"/></svg>
+  </ol>
+</div></section>
+
+<section id="about"><div class="wrap ab">
+  <div class="rv"><div class="ph" role="img" aria-label="團隊照片（佔位）"></div></div>
+  <div class="rv">
+    <div class="sh" style="margin-bottom:14px"><h2>關於我們</h2></div>
+    <p>Luva 是一支結合活動企劃、視覺設計、網站與影像的整合行銷團隊。我們相信，好的活動不只是辦完，而是讓每個參與的人都留下記憶。</p>
+    <p>從第一次討論到現場收工，我們用同一個團隊串起所有環節，讓你只需要專心迎接客人。</p>
+    <span class="hand">一起把想法變成現場！</span>
+  </div>
+</div></section>
+</main>
+
+<div class="cta" id="contact">
+  <h2>有活動想法？先聊聊吧</h2>
+  <p>用 LINE 告訴我們你的需求，我們會盡快回覆。</p>
+  <a class="btn" href="https://lin.ee/XXXXXX" rel="noopener"><i class="fa-brands fa-line"></i>加入 LINE 諮詢</a>
+</div>
+<footer><p>© Luva 整合行銷團隊　版權所有</p></footer>
+<a class="fl" id="fl" href="https://lin.ee/XXXXXX" rel="noopener" aria-label="LINE 諮詢"><i class="fa-brands fa-line"></i></a>
+
+<script>
+const SV=[["fa-lightbulb","活動企劃與執行","學術研討會・週年慶典・校友晚宴",1],["fa-palette","視覺設計","LOGO / 主視覺・海報文宣・簡報設計",2],["fa-laptop-code","網頁及數位服務","活動網站・報名系統・QR 報到",3],["fa-camera-retro","專業攝影與影音","活動紀錄・精華影片・直播服務",4],["fa-hashtag","社群及內容行銷","Facebook・Instagram・LINE 官方帳號",5],["fa-puzzle-piece","專案整合服務","專業主持・場地佈置・人力與物資協調",6]];
+const WK=[["陽明牙醫 50 週年系慶","活動企劃","linear-gradient(135deg,#5b7fd0,#c7a2e8 60%,#f5b9a3)"],["醫學會年度大會","活動企劃","linear-gradient(135deg,#3e6fb0,#7fb5e8)"],["邀請函與海報","視覺設計","linear-gradient(135deg,#f6d6a8,#e8a0a0)"],["活動官網與報名系統","網站製作","linear-gradient(135deg,#2f8a63,#9ccf7a)"],["活動花絮影片","攝影影音","linear-gradient(135deg,#f28b6d,#c7a2e8)"],["校友聯誼晚宴","整合服務","linear-gradient(135deg,#7BA643,#2A6242)"]];
+const ST=[["諮詢","聊聊目標與預算"],["企劃","提案與時程規劃"],["設計","視覺與網站製作"],["執行","現場統籌與管理"],["紀錄","攝影與影音製作"],["交付","成果整理與回顧"]];
+const $=s=>document.querySelector(s);
+$('#svc').innerHTML=SV.map(s=>`<div class="sv rv" style="--b:var(--s${s[3]})"><span class="ic" style="color:var(--i${s[3]})"><i class="fa-solid ${s[0]}"></i></span><h3>${s[1]}</h3><p>${s[2]}</p></div>`).join('');
+// ===== 作品資料（Notion → Worker API）=====
+// 正式網站和 API 同網域用相對路徑；本機或 github.io 測試時改用 workers.dev
+const API=/^(localhost|127\.0\.0\.1)$|\.github\.io$/.test(location.hostname)?'https://luva-api.ivy2270.workers.dev':'';
+const TYPE_BG={'活動企劃':'linear-gradient(135deg,#5b7fd0,#c7a2e8)','視覺設計':'linear-gradient(135deg,#f6d6a8,#e8a0a0)','網站製作':'linear-gradient(135deg,#2f8a63,#9ccf7a)','攝影影音':'linear-gradient(135deg,#f28b6d,#c7a2e8)','整合服務':'linear-gradient(135deg,#7BA643,#2A6242)'};
+const DEF_BG='linear-gradient(135deg,#7BA643,#2A6242)';
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const getJSON=async q=>{const r=await fetch(API+'/api/works'+q);if(!r.ok)throw new Error(r.status);return r.json()};
+const skel=n=>Array.from({length:n},()=>'<div class="w sk" aria-hidden="true"></div>').join('');
+const card=(w,i=0)=>{
+  const href=w.slug?`/works/${encodeURIComponent(w.slug)}`:'#works';
+  const src=w.thumb||w.cover;
+  return `<a class="w" href="${href}" style="--bgp:${TYPE_BG[w.type]||DEF_BG};animation-delay:${i*50}ms">${src?`<img src="${esc(src)}" alt="" loading="lazy" decoding="async">`:''}${w.type?`<span class="tag">${esc(w.type)}</span>`:''}<b>${esc(w.title)}</b></a>`};
+// 首頁精選作品：API 失敗或還沒有精選時，退回佔位卡片
+(async()=>{
+  $('#wall').innerHTML=skel(6);
+  let items;
+  try{items=(await getJSON('?featured=1&limit=6')).items}catch(e){console.warn('works API 失敗，改用佔位資料',e)}
+  if(!items||!items.length)items=WK.map(w=>({title:w[0],type:w[1]}));
+  $('#wall').innerHTML=items.map((w,i)=>card(w,i)).join('');
+})();
+$('#steps').insertAdjacentHTML('beforeend',ST.map(s=>`<li class="st"><b>${s[0]}</b><span>${s[1]}</span></li>`).join(''));
+// rotating word
+const words=['活動企劃','網站製作','專業攝影','視覺設計','社群行銷'],r=$('#rot');let i=0;
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches)setInterval(()=>{r.classList.add('out');setTimeout(()=>{i=(i+1)%words.length;r.textContent=words[i];r.classList.remove('out')},300)},2400);
+// reveal
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach((el,n)=>{el.style.transitionDelay=(n%3)*90+'ms';io.observe(el)});
+// 全部作品：類型篩選按鈕由 API 的 types 產生，分頁載入
+const S={type:'',page:1,busy:false,chips:false,started:false};
+const buildChips=types=>{$('#chips').innerHTML=['全部',...types].map((t,i)=>`<button class="chip" type="button" data-t="${esc(i?t:'')}" aria-pressed="${i===0}">${esc(t)}</button>`).join('')};
+async function loadAll(reset){
+  if(S.busy)return;S.busy=true;
+  const g=$('#all-grid'),wrap=$('#moreWrap');
+  if(reset){S.page=1;g.innerHTML=skel(8);wrap.hidden=true}
+  try{
+    const d=await getJSON(`?limit=12&page=${S.page}`+(S.type?`&type=${encodeURIComponent(S.type)}`:''));
+    if(reset)g.innerHTML='';
+    if(!S.chips){buildChips(d.types);S.chips=true}
+    if(reset&&!d.items.length)g.innerHTML='<p class="empty">這個類型目前還沒有作品</p>';
+    else g.insertAdjacentHTML('beforeend',d.items.map((w,i)=>card(w,i)).join(''));
+    wrap.hidden=!d.hasMore;
+  }catch(e){
+    if(reset)g.innerHTML='<p class="empty">作品暫時載入失敗，請稍後再試</p>';else S.page--;
+  }
+  S.busy=false}
+$('#chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;document.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',c===b));S.type=b.dataset.t;loadAll(true)});
+$('#loadMore').addEventListener('click',()=>{S.page++;loadAll(false)});
+$('#moreBtn').addEventListener('click',e=>{e.preventDefault();const s=$('#all'),open=s.hidden;s.hidden=!open;e.currentTarget.textContent=open?'收合作品':'更多作品';if(open){if(!S.started){S.started=true;loadAll(true)}s.scrollIntoView({behavior:'smooth'})}});
+// mobile menu
+const mb=$('#mb'),nv=$('#nv');
+const setMenu=o=>{nv.classList.toggle('open',o);mb.setAttribute('aria-expanded',o)};
+mb.addEventListener('click',e=>{e.stopPropagation();setMenu(!nv.classList.contains('open'))});
+nv.addEventListener('click',e=>{if(e.target.closest('a'))setMenu(false)});
+document.addEventListener('click',e=>{if(!nv.contains(e.target))setMenu(false)});
+addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
+// hide floating LINE near contact block
+new IntersectionObserver(es=>$('#fl').classList.toggle('hide',es[0].isIntersecting)).observe($('#contact'));
+</script>
+</body>
+</html>
