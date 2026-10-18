@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Luva 整合行銷團隊｜活動企劃・視覺設計・網站製作・攝影</title>
+<link rel="icon" type="image/png" href="favicon.png">
 <meta name="description" content="Luva 整合行銷團隊：從活動企劃、視覺設計、網站製作到攝影影音，一站式完成。">
 <link rel="preconnect" href="https://font.emtech.cc" crossorigin>
 <link href="https://font.emtech.cc/css/UoqMunThenKhung" rel="stylesheet">
@@ -44,8 +45,9 @@ h1,h2,h3{font-family:var(--f-title);color:var(--head);line-height:1.25;margin:0}
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px)}
 header .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
 .logo{display:flex;align-items:center;gap:10px;font:700 22px var(--f-title);color:var(--head)}
-.logo-img{display:block;height:44px;width:auto;max-width:62vw}
-@media(max-width:899px){.logo-img{height:36px}}
+.logo-img{display:block;height:46px;width:auto;max-width:62vw;object-fit:contain}
+@media(min-width:1100px){.logo-img{height:52px}}
+@media(max-width:899px){.logo-img{height:38px}}
 nav{display:none;gap:26px;font-size:15px}nav a{padding:6px 2px;border-bottom:2px solid transparent}nav a:hover{border-color:var(--ac)}
 @media(min-width:900px){nav{display:flex}}
 .hr{display:flex;align-items:center;gap:10px}
@@ -194,12 +196,7 @@ footer{background:var(--g);color:#14261b;text-align:center;font-size:13px;paddin
 
 <header><div class="wrap">
   <a class="logo" href="#top" aria-label="Luva 整合行銷團隊">
-    <!-- ▼ LOGO 預留位置：把你的 logo SVG 內容貼在這個 <svg> 裡，並把 viewBox 改成你的尺寸。高度由 CSS .logo-img 控制（桌機 44px、手機 36px）。也可以改成 <img class="logo-img" src="assets/logo.svg" alt="Luva 整合行銷團隊"> -->
-    <svg class="logo-img" viewBox="0 0 280 56" role="img" aria-label="Luva 整合行銷團隊">
-      <use href="#cl" x="0" y="2" width="52" height="52" style="color:var(--g)"/>
-      <text x="62" y="30" style="font:700 24px var(--f-title);fill:var(--head)">Luva 整合行銷團隊</text>
-      <text x="62" y="48" style="font:400 11px var(--f-body);fill:var(--soft);letter-spacing:.12em">EVENT · DESIGN · MARKETING</text>
-    </svg>
+    <img class="logo-img" src="logo.svg" alt="Luva 整合行銷團隊" width="580" height="98">
   </a>
   <nav id="nv" aria-label="主選單"><a href="#top">首頁</a><a href="#about">關於我們</a><a href="#services">服務項目</a><a href="#works">精選作品</a><a href="#process">合作流程</a><a href="#contact">聯絡我們</a></nav>
   <div class="hr"><a class="btn" href="#contact" style="padding:8px 18px;font-size:14px">立即諮詢</a><button class="mb" id="mb" type="button" aria-label="開啟選單" aria-expanded="false" aria-controls="nv"><i></i><i></i><i></i></button></div>
@@ -282,7 +279,7 @@ const $=s=>document.querySelector(s);
 $('#svc').innerHTML=SV.map(s=>`<div class="sv rv" style="--b:var(--s${s[3]})"><span class="ic" style="color:var(--i${s[3]})"><i class="fa-solid ${s[0]}"></i></span><h3>${s[1]}</h3><p>${s[2]}</p></div>`).join('');
 // ===== 作品資料（Notion → Worker API）=====
 // 正式網站和 API 同網域用相對路徑；本機或 github.io 測試時改用 workers.dev
-const API=/^(localhost|127\.0\.0\.1)$|\.github\.io$/.test(location.hostname)?'https://luva-api.ivy2270.workers.dev':'';
+const API=/^(localhost|127\.0\.0\.1)$|\.github\.io$/.test(location.hostname)?'https://luvateam.com':'';
 const TYPE_BG={'活動企劃':'linear-gradient(135deg,#5b7fd0,#c7a2e8)','視覺設計':'linear-gradient(135deg,#f6d6a8,#e8a0a0)','網站製作':'linear-gradient(135deg,#2f8a63,#9ccf7a)','攝影影音':'linear-gradient(135deg,#f28b6d,#c7a2e8)','整合服務':'linear-gradient(135deg,#7BA643,#2A6242)'};
 const DEF_BG='linear-gradient(135deg,#7BA643,#2A6242)';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
