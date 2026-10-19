@@ -76,17 +76,19 @@ nav{display:none;gap:26px;font-size:15px}nav a{padding:6px 2px;border-bottom:2px
 .collage{position:relative;height:400px}
 @media(min-width:900px){.collage{height:540px}}
 .hs{position:absolute;left:50%;top:50%;width:min(90%,650px);aspect-ratio:.9;transform:translate(-50%,-50%)}
-.hs-bg,.hs-img{position:absolute;inset:0;clip-path:url(#heroshape)}
-.hs-bg{background:radial-gradient(circle at 30% 25%,color-mix(in srgb,var(--gl) 55%,transparent),color-mix(in srgb,var(--g) 38%,transparent));transform:translate(7%,6%) rotate(5deg);animation:sway 10s ease-in-out infinite}
+.hs-bg,.hs-img{position:absolute;inset:0}
+.hs-img{clip-path:url(#heroshape)}
+.hs-bg{width:100%;height:100%;overflow:visible;transform:translate(7%,6%) rotate(5deg);animation:sway 10s ease-in-out infinite}
 @keyframes sway{50%{transform:translate(9%,7%) rotate(9deg)}}
 .hs-main{position:absolute;inset:0;filter:drop-shadow(0 16px 22px rgba(20,40,25,.22));animation:grow .9s cubic-bezier(.3,1.3,.5,1) backwards,bob 8s 1s ease-in-out infinite}
 @keyframes grow{from{opacity:0;transform:scale(.85) rotate(-3deg)}}
 @keyframes bob{50%{transform:translateY(-8px)}}
 .hs-img{background:linear-gradient(150deg,#8fb7e8,#c7a2e8 48%,#f5b9a3);display:grid;place-items:center;color:#fff;text-align:center;font:700 15px/1.5 var(--f-title);text-shadow:0 1px 6px rgba(0,0,0,.35)}
+.hs-img:has(img){background:none}
 .hs-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .bdg{position:absolute;z-index:3;left:2%;bottom:7%;width:min(26%,116px);aspect-ratio:1;border-radius:50%;background:var(--ac);display:grid;place-items:center;box-shadow:0 8px 18px rgba(20,40,25,.2)}
 .bdg .ring{position:absolute;inset:0;width:100%;height:100%;animation:spin 22s linear infinite}
-.bdg text{font:600 10.5px var(--f-body);fill:#14261b}
+.bdg text{font:600 10.5px var(--f-body);fill:#14261b;letter-spacing:.05em}
 .bdg .cl{position:relative;font-size:30px;color:#14261b}
 .fc{position:absolute;color:var(--gd);font-size:46px;animation:spin 18s linear infinite;z-index:2;opacity:.9}
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -213,14 +215,14 @@ footer{background:var(--g);color:#14261b;text-align:center;font-size:13px;paddin
   <div class="collage" aria-hidden="true">
     <svg class="cl fc a"><use href="#cl"/></svg><svg class="cl fc b"><use href="#cl"/></svg>
     <div class="hs">
-      <div class="hs-bg"></div>
+      <svg class="hs-bg" viewBox="0 0 1 1" preserveAspectRatio="none" aria-hidden="true"><defs><radialGradient id="hsbg" cx=".3" cy=".25" r=".9"><stop offset="0" style="stop-color:var(--gl);stop-opacity:.55"/><stop offset="1" style="stop-color:var(--g);stop-opacity:.38"/></radialGradient></defs><path fill="url(#hsbg)" d="M.50 .02C.74 0 .96 .12 .97 .36 .98 .55 .92 .62 .93 .76 .94 .92 .76 1 .52 .98 .30 .96 .22 .99 .10 .88 0 .76 .03 .56 .05 .40 .07 .20 .26 .04 .50 .02Z"/></svg>
       <div class="hs-main"><div class="hs-img">
         <img src="https://rainchord.s3.ap-east-2.amazonaws.com/inventory/1792235134405_luva-index%20-1.webp" alt="活動現場" width="860" height="956" fetchpriority="high">
         
       </div></div>
     </div>
     <div class="bdg">
-      <svg class="ring" viewBox="0 0 120 120"><defs><path id="circ" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"/></defs><text><textPath href="#circ" textLength="272" lengthAdjust="spacing">CREATIVE · DESIGN · MARKETING · EVENT ·</textPath></text></svg>
+      <svg class="ring" viewBox="0 0 120 120"><defs><path id="circ" d="M60 60m-44 0a44 44 0 1 1 88 0a44 44 0 1 1-88 0"/></defs><text><textPath href="#circ">CREATIVE · DESIGN · MARKETING · EVENT ·</textPath></text></svg>
       <svg class="cl"><use href="#cl"/></svg>
     </div>
   </div>
@@ -266,10 +268,10 @@ footer{background:var(--g);color:#14261b;text-align:center;font-size:13px;paddin
 <div class="cta" id="contact">
   <h2>有活動想法？先聊聊吧</h2>
   <p>用 LINE 告訴我們你的需求，我們會盡快回覆。</p>
-  <a class="btn" href="https://lin.ee/XXXXXX" rel="noopener"><i class="fa-brands fa-line"></i>加入 LINE 諮詢</a>
+  <a class="btn" href="https://lin.ee/sUsuzPj" rel="noopener"><i class="fa-brands fa-line"></i>加入 LINE 諮詢</a>
 </div>
 <footer><p>© Luva 整合行銷團隊　版權所有</p></footer>
-<a class="fl" id="fl" href="https://lin.ee/XXXXXX" rel="noopener" aria-label="LINE 諮詢"><i class="fa-brands fa-line"></i></a>
+<a class="fl" id="fl" href="https://lin.ee/sUsuzPj" rel="noopener" aria-label="LINE 諮詢"><i class="fa-brands fa-line"></i></a>
 
 <script>
 const SV=[["fa-lightbulb","活動企劃與執行","學術研討會・週年慶典・校友晚宴",1],["fa-palette","視覺設計","LOGO / 主視覺・海報文宣・簡報設計",2],["fa-laptop-code","網頁及數位服務","活動網站・報名系統・QR 報到",3],["fa-camera-retro","專業攝影與影音","活動紀錄・精華影片・直播服務",4],["fa-hashtag","社群及內容行銷","Facebook・Instagram・LINE 官方帳號",5],["fa-puzzle-piece","專案整合服務","專業主持・場地佈置・人力與物資協調",6]];
@@ -325,6 +327,23 @@ async function loadAll(reset){
 $('#chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;document.querySelectorAll('.chip').forEach(c=>c.setAttribute('aria-pressed',c===b));S.type=b.dataset.t;loadAll(true)});
 $('#loadMore').addEventListener('click',()=>{S.page++;loadAll(false)});
 $('#moreBtn').addEventListener('click',e=>{e.preventDefault();const s=$('#all'),open=s.hidden;s.hidden=!open;e.currentTarget.textContent=open?'收合作品':'更多作品';if(open){if(!S.started){S.started=true;loadAll(true)}s.scrollIntoView({behavior:'smooth'})}});
+// 徽章文字：依實際字體量出寬度，把字距均分到剛好繞滿一圈（Firefox 不支援 textPath 的 textLength）
+function fitBadge(){
+  try{
+    const t=document.querySelector('.bdg text'),tp=t&&t.querySelector('textPath'),ring=document.getElementById('circ');
+    if(!tp||!ring||!tp.getComputedTextLength)return;
+    const C=ring.getTotalLength();
+    t.style.letterSpacing='0px';t.style.fontSize='';
+    let L=tp.getComputedTextLength();
+    if(!L)return;
+    if(L>C){t.style.fontSize=(10.5*C/L*.97)+'px';L=tp.getComputedTextLength()}
+    const n=[...tp.textContent].length;
+    t.style.letterSpacing=Math.max(0,(C-L)/n-.02)+'px';
+  }catch(e){}
+}
+fitBadge();
+(document.fonts&&document.fonts.ready?document.fonts.ready:Promise.resolve()).then(fitBadge);
+addEventListener('load',fitBadge);
 // mobile menu
 const mb=$('#mb'),nv=$('#nv');
 const setMenu=o=>{nv.classList.toggle('open',o);mb.setAttribute('aria-expanded',o)};
