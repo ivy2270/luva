@@ -121,6 +121,7 @@ button.btn{border:0;font:inherit;font-weight:500;cursor:pointer}
 .empty{grid-column:1/-1;text-align:center;color:var(--soft);padding:30px 0}
 .w b{font:700 18px var(--f-title)}
 .tag{align-self:flex-start;background:var(--ac);color:#24332A;font-size:12px;padding:2px 12px;border-radius:99px;margin-bottom:6px;font-weight:500}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}.tags .tag{margin-bottom:0}
 @media(min-width:900px){
   .wall{display:grid;grid-template-columns:repeat(6,1fr);gap:20px;overflow:visible;padding:0;margin:0}
   .w{flex:none;aspect-ratio:auto;min-height:250px}
@@ -288,7 +289,7 @@ const skel=n=>Array.from({length:n},()=>'<div class="w sk" aria-hidden="true"></
 const card=(w,i=0)=>{
   const href=w.slug?`/works/${encodeURIComponent(w.slug)}`:'#works';
   const src=w.thumb||w.cover;
-  return `<a class="w" href="${href}" style="--bgp:${TYPE_BG[w.type]||DEF_BG};animation-delay:${i*50}ms">${src?`<img src="${esc(src)}" alt="" loading="lazy" decoding="async">`:''}${w.type?`<span class="tag">${esc(w.type)}</span>`:''}<b>${esc(w.title)}</b></a>`};
+  return `<a class="w" href="${href}" style="--bgp:${TYPE_BG[w.type]||DEF_BG};animation-delay:${i*50}ms">${src?`<img src="${esc(src)}" alt="" loading="lazy" decoding="async">`:''}${(w.tags||(w.type?[w.type]:[])).length?`<div class="tags">${(w.tags||[w.type]).slice(0,2).map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div>`:''}<b>${esc(w.title)}</b></a>`};
 // 首頁精選作品：API 失敗或還沒有精選時，退回佔位卡片
 (async()=>{
   $('#wall').innerHTML=skel(6);
