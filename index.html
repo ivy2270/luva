@@ -120,8 +120,8 @@ section{padding:80px 0}
 @keyframes pulse{50%{opacity:.55}}
 button.btn{border:0;font:inherit;font-weight:500;cursor:pointer}
 .empty{grid-column:1/-1;text-align:center;color:var(--soft);padding:30px 0}
-.w b{font:700 18px var(--f-title)}
-.tag{align-self:flex-start;background:var(--ac);color:#24332A;font-size:12px;padding:2px 12px;border-radius:99px;margin-bottom:6px;font-weight:500}
+.w b{font:700 18px var(--f-body)}
+.tag{align-self:flex-start;background:var(--bg);color:#24332A;font-size:12px;padding:2px 12px;border-radius:99px;margin-bottom:6px;font-weight:500}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}.tags .tag{margin-bottom:0}
 @media(min-width:900px){
   .wall{display:grid;grid-template-columns:repeat(6,1fr);gap:20px;overflow:visible;padding:0;margin:0}
@@ -141,6 +141,11 @@ button.btn{border:0;font:inherit;font-weight:500;cursor:pointer}
 .all .w{flex:none;aspect-ratio:4/3;min-height:0;grid-column:auto!important;padding:14px;transform:none;animation:up .45s backwards}
 .all .w b{font-size:15px}
 .all .w:hover{transform:translateY(-4px) rotate(-1deg)}
+@media(max-width:699px){
+  .all .tags .tag:nth-child(n+2){display:none}
+  .all .tag{font-size:10px;padding:1px 9px}
+  .all .w b{font-size:12px;line-height:1.4;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1;line-clamp:1;overflow:hidden}
+}
 @keyframes up{from{opacity:0;transform:translateY(16px) scale(.97)}}
 /* process */
 .steps{display:grid;gap:22px;position:relative;list-style:none;margin:0;padding:0 0 0 22px;border-left:3px dashed var(--g)}
@@ -274,7 +279,7 @@ footer{background:var(--g);color:#14261b;text-align:center;font-size:13px;paddin
 <a class="fl" id="fl" href="https://lin.ee/sUsuzPj" rel="noopener" aria-label="LINE 諮詢"><i class="fa-brands fa-line"></i></a>
 
 <script>
-const SV=[["fa-lightbulb","活動企劃與執行","學術研討會・週年慶典・校友晚宴",1],["fa-palette","視覺設計","LOGO / 主視覺・海報文宣・簡報設計",2],["fa-laptop-code","網頁及數位服務","活動網站・報名系統・QR 報到",3],["fa-camera-retro","專業攝影與影音","活動紀錄・精華影片・直播服務",4],["fa-hashtag","社群及內容行銷","Facebook・Instagram・LINE 官方帳號",5],["fa-puzzle-piece","專案整合服務","專業主持・場地佈置・人力與物資協調",6]];
+const SV=[["fa-lightbulb","活動企劃與執行","學術研討會・週年慶典・校友晚宴",1],["fa-palette","視覺設計","LOGO / 主視覺・海報文宣・簡報設計",2],["fa-laptop-code","網頁及數位服務","活動網站・報名系統・QR Code報到",3],["fa-camera-retro","專業攝影與影音","活動紀錄・精華影片・直播服務",4],["fa-hashtag","社群及內容行銷","Facebook・Instagram・LINE 官方帳號",5],["fa-puzzle-piece","專案整合服務","專業主持・場地佈置・人力與物資協調",6]];
 const WK=[["陽明牙醫 50 週年系慶","活動企劃","linear-gradient(135deg,#5b7fd0,#c7a2e8 60%,#f5b9a3)"],["醫學會年度大會","活動企劃","linear-gradient(135deg,#3e6fb0,#7fb5e8)"],["邀請函與海報","視覺設計","linear-gradient(135deg,#f6d6a8,#e8a0a0)"],["活動官網與報名系統","網站製作","linear-gradient(135deg,#2f8a63,#9ccf7a)"],["活動花絮影片","攝影影音","linear-gradient(135deg,#f28b6d,#c7a2e8)"],["校友聯誼晚宴","整合服務","linear-gradient(135deg,#7BA643,#2A6242)"]];
 const ST=[["諮詢","聊聊目標與預算"],["企劃","提案與時程規劃"],["設計","視覺與網站製作"],["執行","現場統籌與管理"],["紀錄","攝影與影音製作"],["交付","成果整理與回顧"]];
 const $=s=>document.querySelector(s);
