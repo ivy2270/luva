@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /work.html
+
+Sitemap: https://luvateam.com/sitemap.xml
