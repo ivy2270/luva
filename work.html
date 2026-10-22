@@ -60,6 +60,7 @@ header .back{font-size:15px;color:var(--soft)}header .back:hover{color:var(--hea
 .prose pre{background:var(--card);padding:14px 18px;border-radius:14px;overflow-x:auto}
 .prose .cols{display:grid;gap:16px;margin:1.8em 0}.prose .cols figure{margin:0}
 @media(min-width:700px){.prose .cols{grid-auto-flow:column;grid-auto-columns:1fr}}
+.prose .col{display:grid;gap:16px;align-content:start}
 .video{position:relative;aspect-ratio:16/9;border-radius:22px;overflow:hidden;margin:1.8em 0;background:#000}
 .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .act{max-width:760px;margin:30px auto 0;display:flex;flex-wrap:wrap;gap:12px}
@@ -71,6 +72,20 @@ footer{background:var(--g);color:#14261b;text-align:center;font-size:13px;paddin
 @supports (height:100svh){.fl{bottom:auto;top:calc(100svh - 82px - env(safe-area-inset-bottom,0px))}}
 @media(min-width:900px){.fl{top:auto;bottom:24px;right:24px}}
 .fl:hover{transform:scale(1.08) rotate(-8deg)}.fl.hide{opacity:0;transform:translateY(20px);pointer-events:none}
+.prose img{cursor:zoom-in}
+/* 燈箱 */
+.lb{position:fixed;inset:0;z-index:100;background:rgba(10,18,13,.94);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .25s}
+.lb[hidden]{display:none}.lb [hidden]{display:none!important}
+.lb.on{opacity:1}
+.lb-f{margin:0;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 72px 70px}
+.lb-f img{display:block;max-width:100%;max-height:calc(100vh - 170px);max-height:calc(100dvh - 170px);width:auto;height:auto;object-fit:contain;border-radius:8px;user-select:none;-webkit-user-drag:none}
+.lb-f figcaption{color:#e9f1e3;font-size:14px;line-height:1.6;margin-top:12px;text-align:center;max-width:70ch}
+.lb button{position:absolute;width:46px;height:46px;border:0;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;font:400 28px/1 var(--f-body);cursor:pointer;display:grid;place-items:center;transition:background .2s}
+.lb button:hover{background:rgba(255,255,255,.24)}.lb button:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
+.lb-x{top:calc(14px + env(safe-area-inset-top,0px));right:14px}
+.lb-p{left:14px;top:50%;transform:translateY(-50%)}.lb-nx{right:14px;top:50%;transform:translateY(-50%)}
+.lb-c{position:absolute;left:0;right:0;bottom:calc(18px + env(safe-area-inset-bottom,0px));text-align:center;color:#cfe0c9;font-size:13px;letter-spacing:.1em}
+@media(max-width:700px){.lb-f{padding:60px 10px 76px}.lb-p,.lb-nx{width:38px;height:38px;font-size:24px;background:rgba(255,255,255,.1)}.lb-p{left:6px}.lb-nx{right:6px}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -99,6 +114,14 @@ footer{background:var(--g);color:#14261b;text-align:center;font-size:13px;paddin
 <footer><p>© Luva 整合行銷團隊　版權所有</p></footer>
 <a class="fl" id="fl" href="https://lin.ee/sUsuzPj" rel="noopener" aria-label="LINE 諮詢"><i class="fa-brands fa-line"></i></a>
 
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="圖片檢視" hidden>
+  <button class="lb-x" type="button" aria-label="關閉">×</button>
+  <button class="lb-p" type="button" aria-label="上一張">‹</button>
+  <figure class="lb-f"><img alt=""><figcaption></figcaption></figure>
+  <button class="lb-nx" type="button" aria-label="下一張">›</button>
+  <div class="lb-c" aria-live="polite"></div>
+</div>
+
 <script>
 const $=s=>document.querySelector(s);
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -113,12 +136,66 @@ function show(w){
   const tags=w.tags||w.services||(w.type?[w.type]:[]);
   const meta=[date&&`<div><b>日期</b>${esc(date)}</div>`,w.client&&`<div><b>客戶</b>${esc(w.client)}</div>`].filter(Boolean).join('');
   $('#app').innerHTML=`<div class="top">${tags.length?`<div class="tags">${tags.map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</div>`:''}<h1>${esc(w.title)}</h1>${w.summary?`<p class="sum">${esc(w.summary)}</p>`:''}${meta?`<div class="meta">${meta}</div>`:''}</div>`
-    +`<div class="cover">${w.cover?`<img src="${esc(w.cover)}" alt="${esc(w.title)}" fetchpriority="high" decoding="async">`:''}</div>`
+    +(w.type==='攝影影音'?'':`<div class="cover">${w.cover?`<img src="${esc(w.cover)}" alt="${esc(w.title)}" fetchpriority="high" decoding="async">`:''}</div>`)  // 攝影類作品：封面圖已經排在內文裡，頁首不重複顯示
     +`<div class="prose">${w.contentHtml||''}</div>`
     +(w.video?`<div class="act" style="display:block"><div class="video"><iframe src="${esc(w.video)}" loading="lazy" allowfullscreen title="影片"></iframe></div></div>`:'')
     +`<div class="act">${w.link?`<a class="btn" href="${esc(w.link)}" target="_blank" rel="noopener noreferrer">前往網站</a>`:''}<a class="btn" href="/#works" style="background:var(--gt);color:var(--head)">看更多作品</a></div>`;
 }
 const fail=t=>{$('#app').innerHTML=`<div class="msg"><p>${t}</p><a class="btn" href="/#works">回到作品列表</a></div>`};
+
+// ===== 燈箱：點內文圖片放大，左右鍵 / 滑動切換，Esc 或點空白處關閉 =====
+const lb=$('#lb'),lbImg=lb.querySelector('.lb-f img'),lbCap=lb.querySelector('figcaption'),lbCnt=lb.querySelector('.lb-c');
+let lbList=[],lbCur=0,lbFrom=null,lbOn=false;
+const lbItems=()=>[...document.querySelectorAll('.prose img')];
+function lbPrep(){                                          // 讓圖片可以用鍵盤開啟
+  lbItems().forEach(i=>{i.tabIndex=0;i.setAttribute('role','button');i.setAttribute('aria-label',(i.alt||'圖片')+'（放大檢視）')});
+}
+function lbShow(i){
+  lbCur=(i+lbList.length)%lbList.length;
+  const el=lbList[lbCur];
+  lbImg.src=el.currentSrc||el.src;lbImg.alt=el.alt||'';
+  lbCap.textContent=(el.closest('figure')?.querySelector('figcaption')?.textContent||el.alt||'').trim();
+  lbCnt.textContent=lbList.length>1?`${lbCur+1} / ${lbList.length}`:'';
+  if(lbList.length>1)[1,-1].forEach(d=>{const n=lbList[(lbCur+d+lbList.length)%lbList.length];new Image().src=n.currentSrc||n.src}); // 預先載入前後一張
+}
+function lbOpen(i,from){
+  lbList=lbItems();if(!lbList.length)return;
+  lbFrom=from||null;
+  lb.querySelectorAll('.lb-p,.lb-nx').forEach(b=>b.hidden=lbList.length<2);
+  lbOn=true;lb.hidden=false;document.documentElement.style.overflow='hidden';
+  lbShow(i);requestAnimationFrame(()=>{if(lbOn)lb.classList.add('on')});
+  lb.querySelector('.lb-x').focus();
+}
+function lbClose(){
+  lbOn=false;lb.classList.remove('on');document.documentElement.style.overflow='';
+  setTimeout(()=>{if(!lbOn){lb.hidden=true;lbImg.removeAttribute('src')}},250);
+  if(lbFrom)lbFrom.focus();
+}
+$('#app').addEventListener('click',e=>{const im=e.target.closest('.prose img');if(im){lbOpen(lbItems().indexOf(im),im)}});
+lb.addEventListener('click',e=>{
+  const t=e.target;
+  if(t.closest('.lb-p'))lbShow(lbCur-1);
+  else if(t.closest('.lb-nx'))lbShow(lbCur+1);
+  else if(t.closest('.lb-x')||(!t.closest('img')&&!t.closest('figcaption')))lbClose();
+});
+addEventListener('keydown',e=>{
+  if(lb.hidden){const t=e.target;if((e.key==='Enter'||e.key===' ')&&t.matches&&t.matches('.prose img')){e.preventDefault();lbOpen(lbItems().indexOf(t),t)}return}
+  if(e.key==='Escape')lbClose();
+  else if(e.key==='ArrowLeft')lbShow(lbCur-1);
+  else if(e.key==='ArrowRight')lbShow(lbCur+1);
+  else if(e.key==='Tab'){                                   // 焦點鎖在燈箱內
+    const f=[...lb.querySelectorAll('button')].filter(b=>!b.hidden),a=document.activeElement;
+    if(e.shiftKey&&a===f[0]){e.preventDefault();f[f.length-1].focus()}
+    else if(!e.shiftKey&&a===f[f.length-1]){e.preventDefault();f[0].focus()}
+  }
+});
+let lbX=null,lbY=0;
+lb.addEventListener('touchstart',e=>{if(e.touches.length===1){lbX=e.touches[0].clientX;lbY=e.touches[0].clientY}else lbX=null},{passive:true});
+lb.addEventListener('touchend',e=>{
+  if(lbX===null||(window.visualViewport&&visualViewport.scale>1.05))return;   // 放大中不切換
+  const t=e.changedTouches[0],dx=t.clientX-lbX,dy=t.clientY-lbY;
+  if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy)*1.5)lbShow(lbCur+(dx<0?1:-1));
+},{passive:true});
 
 (async()=>{
   const el=document.getElementById('work-data');           // Worker 已經把作品資料放進頁面
@@ -129,7 +206,7 @@ const fail=t=>{$('#app').innerHTML=`<div class="msg"><p>${t}</p><a class="btn" h
       if(r.status===404)return fail('找不到這個作品');
       if(!r.ok)throw new Error(r.status);w=await r.json()}catch(e){return fail('作品暫時載入失敗，請稍後再試')}
   }
-  w?show(w):fail('找不到這個作品');
+  w?(show(w),lbPrep()):fail('找不到這個作品');
 })();
 new IntersectionObserver(es=>$('#fl').classList.toggle('hide',es[0].isIntersecting)).observe($('#contact'));
 </script>
